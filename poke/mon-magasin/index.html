@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mon Magasin — Le Bazar du Coin — AutomaTeam</title>
+<meta name="description" content="Un simulateur de gestion de magasin façon Supermarket Simulator, version absurde et humoristique. Unity 6, à télécharger pour Windows.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/poke/hub.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container-page inner">
+    <a class="logo" href="https://automateam.fr/" aria-label="AutomaTeam — accueil">
+      <img src="/logo-mark.png" alt="">
+      <span>Automa<span class="text-gradient">Team</span></span>
+    </a>
+    <a class="back-link" href="../">← Retour au hub</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container-page">
+    <span class="eyebrow">🪟 Jeu Windows · Prototype</span>
+    <h1 style="margin-top:.9rem;">Mon Magasin — <span class="text-gradient">Le Bazar du Coin</span></h1>
+    <p class="lede">
+      Un simulateur de gestion de magasin façon <em>Supermarket Simulator</em>, version absurde :
+      lait de pigeon, steak de buée, café déca-caféiné, bougie Néant… Sous l'humour, une vraie
+      boucle de gestion addictive — commander, ranger, fixer les prix, vendre, encaisser,
+      réapprovisionner, débloquer, agrandir.
+    </p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="BazarDuCoin-Windows.zip" download>⬇ Télécharger (Windows, ~50 Mo)</a>
+    </div>
+    <p class="cta-note">Fichier .zip — décompresse puis lance <code>BazarDuCoin.exe</code>. Windows uniquement.</p>
+  </div>
+</section>
+
+<section class="container-page">
+  <div class="notice warn">
+    <span class="ni">⚠️</span>
+    <p>
+      <strong>Version de développement.</strong> Toute la boucle de jeu est implémentée et vérifiée
+      automatiquement (smoke-test headless, 0 exception), mais cette build n'a encore <strong>jamais
+      été lancée en mode Play</strong> : le rendu, le <em>game feel</em> et l'équilibrage fin restent
+      à valider à l'œil. Attends-toi à des bugs et des aller-retours avant une vraie sortie.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container-page">
+    <h2>Ce que propose le jeu</h2>
+    <div class="feature-grid">
+      <div class="card">
+        <div class="fi">🛒</div>
+        <h3>Boucle de gestion complète</h3>
+        <p>Commander, ranger, fixer les prix, vendre, encaisser, réapprovisionner, débloquer, agrandir — 18 produits absurdes répartis en 6 rayons.</p>
+      </div>
+      <div class="card">
+        <div class="fi">🏚️</div>
+        <h3>Un magasin vide au départ</h3>
+        <p>Ni rayons, ni caisse, ni PC : tout se construit soi-même depuis l'Atelier, avec une petite réserve de matériaux de départ.</p>
+      </div>
+      <div class="card">
+        <div class="fi">💸</div>
+        <h3>Prix dynamiques &amp; réputation</h3>
+        <p>Les clients achètent ou refusent selon leur tolérance au prix — la réputation qui en découle pilote l'affluence du magasin.</p>
+      </div>
+      <div class="card">
+        <div class="fi">🎭</div>
+        <h3>Chaos &amp; ragdoll</h3>
+        <p>Un curseur de chaos physique réglable : objets rebondissants, clients renversables, voitures qui fauchent les passants.</p>
+      </div>
+      <div class="card">
+        <div class="fi">☕</div>
+        <h3>Café &amp; robot</h3>
+        <p>Débloque un bar à café tenu par un employé Barista, et un robot assignable au réassort ou à la caisse.</p>
+      </div>
+      <div class="card">
+        <div class="fi">🎯</div>
+        <h3>12 chapitres, 8 compétences</h3>
+        <p>Mode Histoire (départ 120 €, faillite possible) ou Bac à sable (5000 €, tout débloqué) — progression par compétences et objectifs chiffrés.</p>
+      </div>
+      <div class="card">
+        <div class="fi">👥</div>
+        <h3>Co-op à deux</h3>
+        <p>Tenez la même boutique à deux via une connexion IP directe (pensée pour Hamachi) — le solo reste inchangé.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="container-page">
+    <h2>Commandes</h2>
+    <div class="card" style="padding:1.75rem;">
+      <div class="feature-grid" style="grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:.75rem 1.5rem;">
+        <p><strong>ZQSD / WASD</strong> — Se déplacer</p>
+        <p><strong>Souris</strong> — Regarder</p>
+        <p><strong>Maj (gauche)</strong> — Sprinter</p>
+        <p><strong>Espace</strong> — Sauter</p>
+        <p><strong>E</strong> — Interagir (ramasser, encaisser, PC, rayons…)</p>
+        <p><strong>Clic gauche</strong> — Lancer l'objet tenu</p>
+        <p><strong>G</strong> — Poser doucement</p>
+        <p><strong>F</strong> — Manger</p>
+        <p><strong>B</strong> — Mode démolition</p>
+        <p><strong>Tab</strong> — Téléphone (inventaire, compétences, atelier…)</p>
+        <p><strong>Échap</strong> — Pause</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="container-page">
+    <div class="notice">
+      <span class="ni">🛡️</span>
+      <p>
+        Le jeu n'est pas signé numériquement : Windows peut afficher un avertissement SmartScreen
+        au premier lancement. Clique sur <strong>« Informations complémentaires »</strong> puis
+        <strong>« Exécuter quand même »</strong> pour démarrer.
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container-page inner">
+    <p>© <span data-year></span> AutomaTeam — Le Bazar du Coin</p>
+    <p><a href="../">← Le hub</a> · <a href="https://automateam.fr/">automateam.fr</a></p>
+  </div>
+</footer>
+
+<script src="/poke/hub.js"></script>
+</body>
+</html>

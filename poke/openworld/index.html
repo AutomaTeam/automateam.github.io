@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OpenWorld — AutomaTeam</title>
+<meta name="description" content="Survivalcraft à la première personne en monde ouvert, ambiance Solarpunk : récolte, craft, construction, multijoueur serveur-autoritaire. Unity 6, à télécharger pour Windows.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/poke/hub.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container-page inner">
+    <a class="logo" href="https://automateam.fr/" aria-label="AutomaTeam — accueil">
+      <img src="/logo-mark.png" alt="">
+      <span>Automa<span class="text-gradient">Team</span></span>
+    </a>
+    <a class="back-link" href="../">← Retour au hub</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container-page">
+    <span class="eyebrow">🪟 Jeu Windows · Beta</span>
+    <h1 style="margin-top:.9rem;">Open<span class="text-gradient">World</span></h1>
+    <p class="lede">
+      Un survivalcraft à la première personne, ambiance Solarpunk : explorer un monde ouvert
+      généré procéduralement, récolter des ressources, crafter, construire. Architecture
+      serveur-autoritaire dès le départ — pensé pour le multijoueur.
+    </p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="OpenWorld-Windows.part-001.zip" download>⬇ Partie 1/2 (62 Mo)</a>
+      <a class="btn btn-primary" href="OpenWorld-Windows.part-002.zip" download>⬇ Partie 2/2 (61 Mo)</a>
+    </div>
+    <p class="cta-note">Les 2 fichiers sont nécessaires — voir les instructions de réassemblage ci-dessous. Windows uniquement.</p>
+  </div>
+</section>
+
+<section class="container-page">
+  <div class="notice">
+    <span class="ni">🌍</span>
+    <p>
+      <strong>État : base jouable complète.</strong> FPS réseau, récolte, craft, construction,
+      monde ouvert procédural, cycle jour/nuit, météo, faune, éditeur de carte et sauvegarde sont
+      en place et compilent (0 erreur). Base propre et extensible, encore à enrichir en contenu et en polish.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container-page">
+    <h2>Ce que propose le jeu</h2>
+    <div class="feature-grid">
+      <div class="card">
+        <div class="fi">🌐</div>
+        <h3>Multijoueur serveur-autoritaire</h3>
+        <p>Netcode for GameObjects dès la fondation : héberger, rejoindre par IP, ou lancer un serveur dédié.</p>
+      </div>
+      <div class="card">
+        <div class="fi">🪓</div>
+        <h3>Récolte, craft, construction</h3>
+        <p>Outils de progression (bois → pierre → métal), aperçu fantôme aligné sur grille, rotation et revalidation côté serveur à la pose.</p>
+      </div>
+      <div class="card">
+        <div class="fi">🗺️</div>
+        <h3>Monde ouvert procédural</h3>
+        <p>Terrain généré par graine et diffusé par chunks — chaque joueur régénère le même monde localement, sans rien transmettre sur le réseau. 3 biomes.</p>
+      </div>
+      <div class="card">
+        <div class="fi">🌦️</div>
+        <h3>Jour/nuit, météo &amp; faune</h3>
+        <p>Horloge et météo synchronisées serveur, animaux qui errent et fuient les joueurs, torches et lits pour passer la nuit.</p>
+      </div>
+      <div class="card">
+        <div class="fi">🧰</div>
+        <h3>Éditeur de carte intégré</h3>
+        <p>~330 prefabs Kenney placeables (arbres, rochers, structures…), brosses de dispersion/effacement, export/import JSON.</p>
+      </div>
+      <div class="card">
+        <div class="fi">💾</div>
+        <h3>Sauvegarde persistante</h3>
+        <p>Constructions et inventaires restaurés à la connexion, autosauvegarde côté serveur, données rechargées toujours revalidées.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="container-page">
+    <h2>Commandes</h2>
+    <div class="card" style="padding:1.75rem;">
+      <div class="feature-grid" style="grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:.75rem 1.5rem;">
+        <p><strong>ZQSD / WASD</strong> — Se déplacer</p>
+        <p><strong>Souris</strong> — Regarder</p>
+        <p><strong>Maj (gauche)</strong> — Sprinter</p>
+        <p><strong>Espace</strong> — Sauter</p>
+        <p><strong>E (maintenir)</strong> — Interagir / récolter</p>
+        <p><strong>Clic gauche</strong> — Frapper / construire</p>
+        <p><strong>1 / 2</strong> — Hotbar</p>
+        <p><strong>Tab</strong> — Inventaire</p>
+        <p><strong>B</strong> — Mode construction</p>
+        <p><strong>R</strong> — Pivoter la pièce</p>
+        <p><strong>F</strong> — Manger</p>
+        <p><strong>Q</strong> — Lâcher l'objet</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="container-page">
+    <h2>Installation (fichier en 2 parties)</h2>
+    <div class="how-card">
+      <span class="badge">~123 Mo au total</span>
+      <p>Le jeu dépasse la limite de taille d'un fichier hébergé sur GitHub : il est découpé en 2 parties à réassembler avant de décompresser.</p>
+      <ol>
+        <li>Télécharge les deux fichiers ci-dessus <strong>dans le même dossier</strong>.</li>
+        <li>Ouvre une <strong>invite de commandes</strong> (cmd) dans ce dossier — dans l'explorateur de fichiers, tape <code>cmd</code> dans la barre d'adresse et valide.</li>
+        <li>Tape :<br><code>copy /b OpenWorld-Windows.part-001.zip + OpenWorld-Windows.part-002.zip OpenWorld-Windows.zip</code></li>
+        <li>Décompresse le <code>OpenWorld-Windows.zip</code> obtenu, puis lance <code>OPENWORLD.exe</code>.</li>
+      </ol>
+    </div>
+    <div class="notice" style="margin-top:1.25rem;">
+      <span class="ni">🛡️</span>
+      <p>
+        Le jeu n'est pas signé numériquement : Windows peut afficher un avertissement SmartScreen
+        au premier lancement. Clique sur <strong>« Informations complémentaires »</strong> puis
+        <strong>« Exécuter quand même »</strong> pour démarrer.
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container-page inner">
+    <p>© <span data-year></span> AutomaTeam — OpenWorld</p>
+    <p><a href="../">← Le hub</a> · <a href="https://automateam.fr/">automateam.fr</a></p>
+  </div>
+</footer>
+
+<script src="/poke/hub.js"></script>
+</body>
+</html>

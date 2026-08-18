@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fusion Excel — AutomaTeam</title>
+<meta name="description" content="Remplissez vos modèles Excel automatiquement à partir de n'importe quel fichier source, sans code et sans envoyer vos données sur internet. Lancez l'outil dans le navigateur ou téléchargez-le pour un usage hors ligne.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/poke/hub.css">
+<style>
+/* ===== Configurations Fusion Excel enregistrées (lues depuis le navigateur) ===== */
+.section h2:has(+ .section-note){margin-bottom:.6rem;}
+.section .section-note{font-size:.92rem;color:var(--color-ink-soft);margin:0 0 1.75rem;max-width:46rem;}
+.config-card{display:flex;flex-direction:column;}
+.config-card h3{font-size:1.05rem;margin-bottom:.35rem;}
+.config-card .meta{font-size:.82rem;color:var(--color-ink-soft);margin-bottom:1.1rem;line-height:1.5;}
+.config-card .btn{margin-top:auto;align-self:flex-start;padding:.6rem 1.2rem;font-size:.88rem;}
+.config-card .ready-badge{
+  display:inline-block;font-family:var(--font-mono);font-size:.68rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:.25rem .6rem;border-radius:9999px;margin-bottom:.6rem;
+  background:rgba(6,182,212,.12);color:#0e7490;align-self:flex-start;
+}
+.config-card .reimport-badge{
+  display:inline-block;font-family:var(--font-mono);font-size:.68rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:.25rem .6rem;border-radius:9999px;margin-bottom:.6rem;
+  background:var(--color-line);color:var(--color-ink-soft);align-self:flex-start;
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container-page inner">
+    <a class="logo" href="https://automateam.fr/" aria-label="AutomaTeam — accueil">
+      <img src="/logo-mark.png" alt="">
+      <span>Automa<span class="text-gradient">Team</span></span>
+    </a>
+    <a class="back-link" href="../">← Retour au hub</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container-page">
+    <span class="eyebrow">Outil gratuit · 100% hors ligne</span>
+    <h1 style="margin-top:.9rem;">Fusion <span class="text-gradient">Excel</span></h1>
+    <p class="lede">
+      Remplissez automatiquement un modèle Excel à partir d'un autre fichier — même si sa structure
+      change à chaque fois. Détection par mots-clés, zones calculées (additions, multiplications,
+      assemblage de nom/prénom…), traitement de plusieurs fichiers en un clic. Aucune donnée n'est
+      jamais envoyée sur internet : tout se passe sur votre ordinateur.
+    </p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="app/">🚀 Lancer l'outil dans le navigateur</a>
+      <a class="btn btn-ghost" href="app/index.html" download="fusion-excel.html">⬇ Télécharger (fichier .html)</a>
+    </div>
+    <p class="cta-note">Aucune inscription, aucune installation. Le fichier téléchargé fonctionne hors ligne, par double-clic.</p>
+  </div>
+</section>
+
+<section class="section" id="savedConfigsSection" style="display:none;padding-top:0;">
+  <div class="container-page">
+    <h2>Vos configurations enregistrées</h2>
+    <p class="section-note">
+      Retrouvées sur ce navigateur. Cliquez sur « Charger », puis importez votre fichier modèle à
+      l'étape 1 : la configuration s'applique automatiquement, sans repasser par l'étape 2.
+    </p>
+    <div class="feature-grid" id="savedConfigsGrid"></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container-page">
+    <h2>Ce que l'outil sait faire</h2>
+    <div class="feature-grid">
+      <div class="card">
+        <div class="fi">🔍</div>
+        <h3>Détection intelligente</h3>
+        <p>Retrouve vos données dans le fichier source grâce à des mots-clés, même si sa mise en page change d'un mois à l'autre.</p>
+      </div>
+      <div class="card">
+        <div class="fi">🧮</div>
+        <h3>Zones calculées</h3>
+        <p>Combine plusieurs zones entre elles : additionner, multiplier, ou assembler un texte (ex. Prénom + Nom, Heures × Taux horaire).</p>
+      </div>
+      <div class="card">
+        <div class="fi">📦</div>
+        <h3>Traitement en lot</h3>
+        <p>Appliquez la même configuration à plusieurs fichiers source d'un coup, et récupérez tous les résultats dans une archive .zip.</p>
+      </div>
+      <div class="card">
+        <div class="fi">💾</div>
+        <h3>Configurations réutilisables</h3>
+        <p>Enregistrez vos zones et vos réglages sous un nom pour rejouer la même opération en un clic, le mois suivant.</p>
+      </div>
+      <div class="card">
+        <div class="fi">⚠️</div>
+        <h3>Alertes de cohérence</h3>
+        <p>Signale les valeurs manquantes ou inhabituelles avant l'export, avec un niveau d'exigence réglable.</p>
+      </div>
+      <div class="card">
+        <div class="fi">🔒</div>
+        <h3>100% hors ligne</h3>
+        <p>Aucune donnée ne quitte votre poste. Aucun compte, aucun serveur : tout le traitement se fait dans votre navigateur.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container-page">
+    <h2>Lancer ou télécharger ?</h2>
+    <div class="how-grid">
+      <div class="how-card launch">
+        <span class="badge">Essayer maintenant</span>
+        <h3>🚀 Lancer l'outil</h3>
+        <p>
+          Ouvre l'outil directement ici, sur automateam.fr. Idéal pour l'essayer tout de suite ou
+          pour un usage occasionnel — rien à installer.
+        </p>
+        <a class="btn btn-primary" href="app/">Lancer maintenant</a>
+      </div>
+      <div class="how-card download">
+        <span class="badge">Usage régulier</span>
+        <h3>⬇ Télécharger le fichier</h3>
+        <p>
+          Récupère le fichier .html complet sur votre ordinateur. Vous pourrez le réutiliser hors
+          ligne, sans connexion internet, en le rouvrant par un simple double-clic — pratique pour
+          un usage régulier ou sans accès internet permanent.
+        </p>
+        <a class="btn btn-ghost" href="app/index.html" download="fusion-excel.html">Télécharger (.html)</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container-page inner">
+    <p>© <span data-year></span> AutomaTeam — Fusion Excel</p>
+    <p><a href="../">← Le hub</a> · <a href="https://automateam.fr/">automateam.fr</a></p>
+  </div>
+</footer>
+
+<script src="/poke/hub.js"></script>
+<script>
+// Les configurations enregistrées vivent dans le localStorage de ce navigateur, sous la
+// même origine (automateam.fr) que l'outil à app/ : on peut donc les lire ici et proposer
+// un accès direct, sans avoir à rouvrir l'outil puis chercher dans la liste.
+// Le modèle associé (s'il a été mis en cache) vit lui dans IndexedDB : une configuration
+// avec modèle en cache se lance directement à l'étape 3 (import du fichier source) dans
+// l'outil ; sans modèle en cache, il faudra le réimporter manuellement une fois.
+(async function(){
+  function esc(s){
+    return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+  function fmtDate(iso){
+    try{ return new Date(iso).toLocaleDateString('fr-FR',{day:'numeric',month:'short',year:'numeric'}); }
+    catch(e){ return ''; }
+  }
+  // Interroge IndexedDB pour savoir quelles configurations ont un modèle en cache
+  // (même base que l'outil : base "fusion-excel-session", magasin "templates").
+  function readyConfigNames(){
+    return new Promise(resolve=>{
+      try{
+        const req=indexedDB.open('fusion-excel-session', 2);
+        req.onupgradeneeded=()=>{
+          const db=req.result;
+          if(!db.objectStoreNames.contains('session')) db.createObjectStore('session');
+          if(!db.objectStoreNames.contains('templates')) db.createObjectStore('templates');
+        };
+        req.onsuccess=()=>{
+          const db=req.result;
+          if(!db.objectStoreNames.contains('templates')){ resolve([]); return; }
+          const r=db.transaction('templates','readonly').objectStore('templates').getAllKeys();
+          r.onsuccess=()=>resolve(r.result||[]);
+          r.onerror=()=>resolve([]);
+        };
+        req.onerror=()=>resolve([]);
+      }catch(e){ resolve([]); }
+    });
+  }
+  try{
+    const raw=localStorage.getItem('fusion-excel-configs');
+    if(!raw) return;
+    const cfgs=JSON.parse(raw);
+    const names=Object.keys(cfgs||{});
+    if(!names.length) return;
+    const ready=new Set(await readyConfigNames());
+    const grid=document.getElementById('savedConfigsGrid');
+    grid.innerHTML=names.map(name=>{
+      const c=cfgs[name]||{};
+      const zoneCount=(c.zones||[]).length;
+      const sheet=c.sheet||'';
+      const date=c.savedAt?fmtDate(c.savedAt):'';
+      const isReady=ready.has(name);
+      const badge=isReady
+        ? '<span class="ready-badge">🚀 Prêt en un clic</span>'
+        : '<span class="reimport-badge">Modèle à réimporter</span>';
+      return '<div class="card config-card">'
+        +badge
+        +'<h3>'+esc(name)+'</h3>'
+        +'<p class="meta">'+zoneCount+' zone(s) · onglet « '+esc(sheet)+' »'+(date?' · enregistrée le '+esc(date):'')+'</p>'
+        +'<a class="btn btn-primary" href="app/?config='+encodeURIComponent(name)+'">▶ '+(isReady?'Utiliser':'Charger')+'</a>'
+        +'</div>';
+    }).join('');
+    document.getElementById('savedConfigsSection').style.display='';
+  }catch(e){ /* stockage indisponible ou configurations corrompues : on ignore silencieusement */ }
+})();
+</script>
+</body>
+</html>

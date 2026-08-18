@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Age of TD V2 — Hanami 🌸</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80'>🌸</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="frame">
+    <div id="stage">
+      <canvas id="game" width="1664" height="960"></canvas>
+
+      <!-- HUD en jeu -->
+      <div id="hud" class="hidden">
+        <div id="topbar">
+          <div class="pill" id="goldPill">🪙 <span id="goldV">0</span></div>
+          <div class="pill" id="livesPill">💖 <span id="livesV">20</span></div>
+          <div class="pill" id="wavePill">🌊 <span id="waveV">0</span></div>
+          <div class="pill" id="woodPill" title="Bois (récolté par les villageois)">🪵 <span id="woodV">0</span></div>
+          <div class="pill" id="stonePill" title="Pierre (récoltée par les villageois)">🪨 <span id="stoneV">0</span></div>
+          <div class="pill" id="manaPill" title="Mana (sorts)">🔮 <span id="manaV">40</span></div>
+          <div class="pill" title="Yokai restants">👹 <span id="enemiesV">0</span></div>
+          <div class="pill" id="weatherPill" title="Météo">☀️ <span id="weatherV">Ciel clair</span></div>
+          <div id="charmsBar"></div>
+          <div class="spacer"></div>
+          <button id="callBtn" class="btn call">▶️ Lancer la vague 1</button>
+          <div class="pill speeds">
+            <button class="spd on" data-s="1">×1</button>
+            <button class="spd" data-s="2">×2</button>
+            <button class="spd" data-s="3">×3</button>
+          </div>
+          <button id="pauseBtn" title="Pause (Échap)">⏸️</button>
+        </div>
+
+        <div id="bossBar" class="hidden">
+          <div id="bossName"></div>
+          <div class="bbOuter">
+            <div id="bossFill"></div>
+            <div id="bossShield"></div>
+          </div>
+        </div>
+
+        <div id="banners"></div>
+        <div id="objectives"></div>
+        <div id="herobar">
+          <button id="heroDeploy" class="heroBtn" title="Déployer / déplacer le héros (H)">🗡️</button>
+          <div class="heroInfo">
+            <div class="heroTop"><span id="heroLabel">Déployer le héros</span></div>
+            <div class="heroXp"><div id="heroXpFill"></div></div>
+          </div>
+          <button id="heroTalent" class="heroBtn talent hidden" title="Choisir un talent (T)">✨</button>
+        </div>
+        <div id="spellbar"></div>
+        <div id="shop"></div>
+        <div id="towerPanel" class="hidden"></div>
+        <div id="tooltip" class="hidden"></div>
+      </div>
+
+      <!-- Menu principal -->
+      <div id="menu">
+        <div class="titleWrap">
+          <div id="title">Age of TD <span class="v2">V2</span></div>
+          <div id="subtitle"><span class="jp">桜</span> HANAMI EDITION <span class="jp">桜</span></div>
+        </div>
+        <div class="diffRow">
+          <button class="diffCard" data-d="facile">🌸 Facile<small>28 vies · yokai tendres</small></button>
+          <button class="diffCard on" data-d="normal">⛩️ Normal<small>20 vies · l'équilibre</small></button>
+          <button class="diffCard" data-d="difficile">👹 Difficile<small>14 vies · élites félonnes</small></button>
+        </div>
+        <div class="mapPick">
+          <div class="mapPickLabel">⛩️ Champ de bataille</div>
+          <div id="mapRow" class="mapRow"></div>
+        </div>
+        <button id="playBtn">🌸 JOUER</button>
+        <button id="coopBtn">🤝 Co-op entre potes</button>
+        <button id="metaBtn">🏵️ Progression &amp; succès</button>
+        <button id="dailyBtn">🎲 Défi du jour</button>
+        <div id="records"></div>
+        <div class="menuLinks">
+          <button class="btn" id="helpBtn">📜 Comment jouer</button>
+          <button class="btn" id="menuSettingsBtn">⚙️ Options</button>
+        </div>
+        <div id="credit">Annexe V2 du jeu AgeOfTD — forgée avec 🌸 par AutomaTeam</div>
+      </div>
+
+      <!-- Modales (pause, omamori, fin de partie…) -->
+      <div id="modal" class="hidden"></div>
+    </div>
+  </div>
+
+  <script src="js/util.js"></script>
+  <script src="js/map.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/fx.js"></script>
+  <script src="js/bg.js"></script>
+  <script src="js/enemies.js"></script>
+  <script src="js/towers.js"></script>
+  <script src="js/units.js"></script>
+  <script src="js/hero.js"></script>
+  <script src="js/synergy.js"></script>
+  <script src="js/meta.js"></script>
+  <script src="js/weather.js"></script>
+  <script src="js/waves.js"></script>
+  <script src="js/charms.js"></script>
+  <script src="js/net.js"></script>
+  <script src="js/ai.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>
